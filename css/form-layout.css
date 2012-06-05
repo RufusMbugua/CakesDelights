@@ -1,0 +1,42 @@
+/* Columns*/
+.column {
+	width: 100%;
+	position: relative;
+	padding: 20px 20px 10px 10px;
+}
+.column textarea {
+	display: block;
+	float: right;
+	margin-top: 10px;
+	width:80%;
+}
+.column label {
+	float: left;
+	margin-top: 50px;
+	display:block;
+	
+}
+#column-labels {
+}
+.checkbox {
+	margin: auto;
+	float: right;
+}
+#column-textareas {
+
+}
+.left, .right {
+	width: 25%;
+}
+
+.left, .right,center{
+
+border: 1px solid #999;
+}
+.right {
+	float: right;
+}
+.center {
+	width: 10%;
+}
+
