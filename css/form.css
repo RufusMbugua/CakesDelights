@@ -1,11 +1,25 @@
 @charset "utf-8";
 /* CSS Document */
+/**
+ * -----------------	
+ * FORM CSS File
+ * -----------------
+ * 
+ * Description -> Handles general form layout and interactivity
+ * 
+ * 
+ */
+
+/* Import: Font CSS
+ Contents:
+ Quicksand Font Family (and variants)
+ * */
+@import url('fonts.css');
 
 .form-container {
-	width: 82%;
+	width: 95%;
 	height: 600px;
 	overflow: auto;
-	/*position:absolute;*/
 	padding: 5px 5px 5px 5px;
 	margin: auto;
 	margin-top: 10px;
@@ -17,10 +31,12 @@
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
-@font-face {
-	font-family: fortifiedFonts;
-	src: url('../res/fonts/JandaSafeandSound'), url('../res/fonts/JandaSafeandSoundSolid'); /* IE9+ */
+
+.form-container section {
+	float: left;
+	z-index: 1;
 }
+
 .form-container h3 {
 	font-size: 16px;
 	color: #039;
@@ -33,15 +49,18 @@ pre::-webkit-scrollbar-thumb:horizontal {
 	background: rgba(0, 0, 0, .2);
 }
 .error {
-	font-family: "adobe garamond Pro";
-	font-size: 26px;
+	font-family: inherit;
+	font-size: inherit;
 	color: #F33;
-	text-align: center;
+	border-color: #F33;
 }
 .form-sidebar {
-	width: 12%;
-	margin-top: 10px;
-	margin-left: 8px;;
+	right: 2%;
+	position: absolute;
+	float: right;
+	top: 15%;
+	background-color: #FFFFFF;
+	width: 13%;
 	padding-top: 10px;
 	border: 2px solid #CCC;
 	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
@@ -58,17 +77,22 @@ pre::-webkit-scrollbar-thumb:horizontal {
 input.radio {
 	width: 10px;
 }
-.form-container input:focus {
-	clear: both;
-	border: 2px #039 solid;
-}
 .menu-container {
-	width: 38%;
+	width: 10%;
 	height: auto;
+	position: absolute;
+	left: 2%;
+	top: 15%;
+}
+.menu-container-2 {
+	width: 20%;
+	height: auto;
+	display: inline-block;
 }
 .menu {
+	background: #FFF;
 	width: 100%;
-	margin-top: 10px;
+	margin-bottom: 10px;
 	border: 2px solid #CCC;
 	-webkit-box-shadow: inset 0px 0px 6px 0px #000;
 	-moz-box-shadow: inset 0px 0px 6px 0px #000;
@@ -76,29 +100,59 @@ input.radio {
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	padding: 5px 20px 20px 20px;
 	padding-bottom: 20px;
 	height: 25px;
 	overflow: hidden;
 	-webkit-transition-property: height;
-	-webkit-transition-duration: 0.75s;
+	-webkit-transition-duration: 0.25s;
 	-webkit-transition-timing-function: linear;
 	-moz-transition-property: height;
-	-moz-transition-duration: 0.75s;
+	-moz-transition-duration: 0.25s;
 	-moz-transition-timing-function: linear;
 	-o-transition-property: height;
-	-o-transition-duration: 0.75s;
+	-o-transition-duration: 0.25s;
 	-o-transition-timing-function: linear;
 	transition-property: height;
-	transition-duration: 0.75s;
+	transition-duration: 0.25s;
 	transition-timing-function: linear;
+	cursor: hand;
 }
-.menu:hover {
-	height: 250px;
+
+.min, .max {
+	float: right;
+	display: inline-block;
+	width: 2%;
+	font-weight: bolder;
+	font-size: 30px;
+	cursor: pointer;
+	color: #999999;
+}
+.max:hover {
+	color: #3333FF;
+}
+.min:hover {
+	color: #FF6666;
+}
+.menu:click {
+	height: 100%;
 }
 .form-sidebar h3 {
 	color: #039;
 }
-.menu h2, .form-sidebar h3 {
+.menu h2 {
+	margin-top: 5px;
+	text-align: center;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	padding-bottom: 5px;
+	border-bottom: #039 solid 3px;
+	width: 70%;
+	margin-bottom: 15px;
+	display: inline-block;
+	margin-left: 10px;
+}
+.form-sidebar h3 {
 	text-align: center;
 	margin: auto;
 	font-family: "Times New Roman", Times, serif;
@@ -110,13 +164,15 @@ input.radio {
 }
 .menu a {
 	text-decoration: none;
-	margin: auto;
+	margin-left: 10px;
 	font-family: "Times New Roman", Times, serif;
 	font-size: 14px;
-	text-align: center;
+	text-align: left;
 	padding-top: 10px;
-	cursor: hand;
+	cursor: pointer;
 	color: #000;
+	display: block;
+	width: 100%;
 }
 .form-sidebar a {
 	margin-left: 18px;
@@ -126,7 +182,12 @@ input.radio {
 }
 .menu a:hover {
 	color: #039;
+	cursor: hand;
 }
+.chosen a{
+	color: #3333FF;
+}
+
 .menu ul, .menu ul li {
 	list-style: none;
 	margin: 0;
@@ -162,7 +223,8 @@ input.radio {
 	border: 1.4px solid #CC3333;
 	border-radius: 5px;
 }
-/* Login Form*/
+/* Parent Container
+ *  Login Form */
 .login {
 	margin: auto;
 	margin-top: 40px;
@@ -172,19 +234,54 @@ input.radio {
 	height: auto;
 	border: 1px solid #999;
 }
+/* Child Form
+ Contents :
+ 1. Input Fields:  Username
+ 2. Password
+ 3. Button: Login
+ *
+ * */
 .form-login {
 	width: 100%;
 	margin: 0 auto;
 	display: inline-block;
-	margin-left: 20px border :2px solid #999;
+	margin-left: 20px border 2px solid #999;
 }
+/*
+ Input fields within Login Form
+
+ Attribute => Default
+ * */
 .form-login input {
 	padding: 10px 10px 10px 10px;
 	width: 100%;
 	border: 1px solid #999;
 	outline: none;
+	font-family: Quicksand;
+	font-size: 24px;
 }
+/*
+ Input fields within Login Form
+
+ Attribute => Focus
+ * */
 .form-login input:focus {
+	font-family: Quicksand Bold;
+}
+
+/*
+ Button within Login Form
+ * */
+.form-login button {
+	font-family: Quicksand;
+}
+form input, form textarea {
+	border: 1px solid #999;
+	outline: none;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+}
+.form-login input:focus, form input:focus, form textarea:focus {
 	-webkit-box-shadow: inset 0px 3px 6px -3px #000;
 	-moz-box-shadow: inset 0px 3px 6px -3px #000;
 	box-shadow: inset 0px 3px 6px -3px #000;
@@ -206,8 +303,8 @@ input.radio {
 	-webkit-transform: translateY(-570px);
 }
 #profile-before {
-	right: 10px;
-	width: 170px;
+	right: 2%;
+	width: 13%;
 	height: 30px;
 	overflow: hidden;
 	position: absolute;
@@ -242,7 +339,10 @@ input.radio {
 }
 #profile-before:hover {
 
-	height: 150px;
+	height: 100px;
+}
+#profile-before p {
+	text-align: center;
 }
 #profile-fancy {
 	display: block;

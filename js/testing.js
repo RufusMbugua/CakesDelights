@@ -7,18 +7,6 @@
 
 	});*/
 $().ready(function() {
-	// validate the comment form when it is submitted
-//	$("#internalFortified_A1").validate();
-
-//limit comment length
-  /*$('input.textarea').keyup(function() {
-                var len = this.value.length;
-                if (len >= 150) {
-                    this.value = this.value.substring(0, 150);
-                }
-                $('#charLeft').text(150 - len);
-            });*/
-           
     $.validator.addMethod('positiveNumber',
     function (value) { 
         return Number(value) > 0;
@@ -29,14 +17,22 @@ $().ready(function() {
         return Number(value) >= 0;
     }, 'Value must be >= 0');
     
-  /*  $.validator.addMethod('checkOne',
-    function (tick){
-    	return $('input:checked').length (tick) > 1;
-    }, "Select atleast one area visited");*/
     
    $.validator.addMethod("alphaNumerals", function(value, element) {
         return this.optional(element) || /^[a-z0-9\-]+$/i.test(value);
     }, "Only letters (a-z), numbers(0-9), or dash (-) is allowed.");
+    
+     $.validator.addClassRules({
+        cloned:{
+        required: true
+    },
+    positive:{
+    	positiveNumber:true
+    	},
+    fromZero:{
+    	zeroAndAbove:true
+    	}
+    });
     
    
 
@@ -54,7 +50,7 @@ $().ready(function() {
 				
 			integrityObservation:{
 				required:true,
-				alphaNumerals:true},
+				alphaNumerals:false},
 				
 			lotObservation:"required",
 			productObservation:"required",
@@ -67,11 +63,12 @@ $().ready(function() {
 			iodine_compounds_batch_status:"required",
 			purchaseOrder: {
 				required: true,
-				minlength: 4
+				minlength: 1
 			},
 			actionsTaken: {
 				required: true
-			}
+			},
+			accepted:"required"
 		},
 		messages: {
 			productType: "Please enter the productType",
@@ -82,7 +79,7 @@ $().ready(function() {
 			quantity:{
 				required:"Provide the quantity as observed"
 			},
-			integrityObservation:"Comment on the quantity as observed",
+			integrityObservation:{required:"Comment on the quantity as observed"},
 			lotObservation:"Comment on the lot number as observed",
 			productObservation:"Comment on the production date as observed",
 			expirationObservation:"Comment on the expiration date as observed",
@@ -95,11 +92,13 @@ $().ready(function() {
 			},
 			purchaseOrder: {
 				required: "Please provide the purchase order #",
-				minlength: "The purchase order # must be > 3 characters"
+				minlength: "The purchase order # must be > 1 character"
 			},
 			actionsTaken: {
 				required: "Please comment on reasons for rejection/action taken"
-			}
+			},
+			accepted:"Rejected or Accepted?",
+			cloned:{required:"required"}
 		}
 		});
 		
@@ -116,104 +115,104 @@ $().ready(function() {
 				required: true,
 				email: true
 			},
-			iodine_type:"required",
-			inspection_officer_name:"required",
-			inspection_officer_sign:"required",
-			inspection_date:"required",
-			supervisor_sign:"required",
-			supervision_date:"required",
-			production_area:"required",
-			packaging_area:"required",
+			iodineType:"required",
+			inspectionOfficerName:"required",
+			inspectionOfficerSign:"required",
+			inspectionDate:"required",
+			supervisorSign:"required",
+			supervisionDate:"required",
+			productionArea:"required",
+			packagingArea:"required",
 			warehouse:"required",
-			staff_facilities:"required",
+			staffFacilities:"required",
 			hygiene:"required",
-			protective_clothing:"required",
-			trained_in_task:"required",
-			receipt_and_storage:"required",
-			premix_dilution:"required",
-			feeder_verification:"required",
-			sampling_salt:"required",
-			salt_iodine_test:"required",
-			iodine_inventory_uptodate:"required",
-			certificate_of_analysis:"required",
-			iodine_stored_well:"required",
-			fifo_system:"required",
-			iodine_handling:"required",
-			premix_preparation:"required",
-			storage_handling_area:"required",
-			iodine_handling:"required",
-			storage_handling:"required",
-			feeder_records_available:"required",
-			premix_level_adequate:{required:false},
-			salt_records_uptodate:"required",
-			ratio_action:"required",
-			iodine_results_level:"required",
-			salt_samples_analyzed:"required",
-			internal_test:"required",
-			external_lab:"required",
-			daily_compo_prepared:"required",
-			last_samples_stored:"required",
-			good_labeling:"required",
-			fortified_salt_stored:"required",
+			protectiveClothing:"required",
+			trainedInTask:"required",
+			receiptAndStorage:"required",
+			premixDilution:"required",
+			feederVerification:"required",
+			samplingSalt:"required",
+			saltIodineTest:"required",
+			iodineInventoryUptodate:"required",
+			certificateOfAnalysis:"required",
+			iodineStoredWell:"required",
+			fifoSystem:"required",
+			iodineHandling:"required",
+			premixPreparation:"required",
+			storageHandlingArea:"required",
+			iodineHandling:"required",
+			storageHandling:"required",
+			feederRecordsAvailable:"required",
+			premixLevelAdequate:{required:true},
+			saltRecordsUptodate:"required",
+			ratioAction:"required",
+			iodineResultsLevel:"required",
+			saltSamplesAnalyzed:"required",
+			internalTest:"required",
+			externalLab:"required",
+			dailyCompoPrepared:"required",
+			lastSamplesStored:"required",
+			goodLabeling:"required",
+			fortifiedSaltStored:"required",
 		},
 		messages: {
-			inspection_registry:"Provide an inspection registry #",
+			inspectionRegistry:"Provide an inspection registry #",
 			inspectionDate:"Please provide the date of inspection",
-			inspection_officer:"Name of inspection officer is required",
-			mill_name:"Provide the name of the mill name",
+			inspectionOfficer:"Name of inspection officer is required",
+			millName:"Provide the name of the mill name",
 			address:"Provide the address of the factory/mill",
 			telephone:"Provide the telephone # of the factory/mill",
 			email:{
 				required:"Please provide an email address",
 				email:"Not a valid email address. E.g john.doe@moh.go.ke"},
-			iodine_type:"Specifiy the iodine type in the salt",
-			inspection_officer_name:"Please provide the name of the inspection officer",
-			inspection_officer_sign:"Please sign with the initials of the inspection officer",
-			inspection_date:"Provide the date of inspection",
-			supervisor_name:"Please provide the name of the supervising officer",
-			supervisor_sign:"Please sign with the initials of the supervising officer",
-			supervision_date:"Date of supervision",
-			production_area:"Is the production area clean and sanitable?",
-			packaging_area:"Is the packaging area clean and sanitable?",
+			iodineType:"Specifiy the iodine type in the salt",
+			inspectionOfficerName:"Please provide the name of the inspection officer",
+			inspectionOfficerSign:"Please sign with the initials of the inspection officer",
+			inspectionDate:"Provide the date of inspection",
+			supervisorName:"Please provide the name of the supervising officer",
+			supervisorSign:"Please sign with the initials of the supervising officer",
+			supervisionDate:"Date of supervision",
+			productionArea:"Is the production area clean and sanitable?",
+			packagingArea:"Is the packaging area clean and sanitable?",
 			warehouse:"Is the warehouse area clean and sanitable?",
-			staff_facilities:"Are the staff facilities and toilettes clean and sanitable?",
+			staffFacilities:"Are the staff facilities and toilettes clean and sanitable?",
 			hygiene:"Is the hygiene at the required level?",
-			protective_clothing:"Do personnel wear protective clothing?",
-			trained_in_task:"Are the personnel trained in their tasks?",
-			receipt_and_storage:"Are there receipt and storage written procedures or instructions?",
-			premix_dilution:"Are there premix dilution written procedures or instructions?",
-			feeder_verification:"Written procedures or instructions exist for this?",
-			sampling_salt:"Written procedures or instructions exist for this?",
-			salt_iodine_test:"Written procedures or instructions exist for this?",
-			iodine_inventory_uptodate:"Is the inventory up to date?",
-			certificate_of_analysis:"Is there a certificate of analysis?",
-			iodine_stored_well:"Has the iodine been stored well?",
-			fifo_system:"Does a 'first-in first-out' system exist?",
-			iodine_handling:"Is the hadling of the iodine upto standard?",
-			premix_preparation:"Is there a premix preparation?",
-			storage_handling_area:"How adequate is the storage handling area?",
-			iodine_handling:"Iodine handling adequate?",
-			storage_handling:"Storage handling adequate?",
-			feeder_records_available:"Available?",
-			premix_level_adequate:"Adequate premix level?",
-			salt_records_uptodate:"Are the fortified salt records up to date?",
-			ratio_action:"Is there any action taken on the ratio of fortified salt/premix?",
-			iodine_results_level:"Is the iodine reuslts< 40mg/kg",
-			salt_samples_analyzed:"Analysis of the salt samples?",
-			internal_test:"Use of internal test?",
-			external_lab:"Use of external test?",
-			daily_compo_prepared:"Is there preparation of a daily composite sample?",
-			last_samples_stored:"Have the last 30 samples been stored?",
-			good_labeling:"Does labeling meet the requirements",
-			fortified_salt_stored:"Is the fortified salt storeed adequately?"
+			protectiveClothing:"Do personnel wear protective clothing?",
+			trainedInTask:"Are the personnel trained in their tasks?",
+			receiptAndStorage:"Are there receipt and storage written procedures or instructions?",
+			premixDilution:"Are there premix dilution written procedures or instructions?",
+			feederVerification:"Written procedures or instructions exist for this?",
+			samplingSalt:"Written procedures or instructions exist for this?",
+			saltIodineTest:"Written procedures or instructions exist for this?",
+			iodineInventoryUptodate:"Is the inventory up to date?",
+			certificateOfAnalysis:"Is there a certificate of analysis?",
+			iodineStoredWell:"Has the iodine been stored well?",
+			fifoSystem:"Does a 'first-in first-out' system exist?",
+			iodineHandling:"Is the hadling of the iodine upto standard?",
+			premixPreparation:"Is there a premix preparation?",
+			storageHandlingArea:"How adequate is the storage handling area?",
+			iodineHandling:"Iodine handling adequate?",
+			storageHandling:"Storage handling adequate?",
+			feederRecordsAvailable:"Available?",
+			premixLevelAdequate:{required:"Adequate premix level?"},
+			saltRecordsUptodate:"Are the fortified salt records up to date?",
+			ratioAction:"Is there any action taken on the ratio of fortified salt/premix?",
+			iodineResultsLevel:"Is the iodine reuslts< 40mg/kg",
+			saltSamplesAnalyzed:"Analysis of the salt samples?",
+			internalTest:"Use of internal test?",
+			externalLab:"Use of external test?",
+			dailyCompoPrepared:"Is there preparation of a daily composite sample?",
+			lastSamplesStored:"Have the last 30 samples been stored?",
+			goodLabeling:"Does labeling meet the requirements",
+			fortifiedSaltStored:"Is the fortified salt storeed adequately?"
 		}
 		});
 		
-		$("#internalFortified_A2").validate({
+		$("#internalFortified_A2").validate({/*salt module*/
 
 	
 		rules: {
-			iodineDate1: "required",
+			
 			iodineSupplier1: "required",
 			iodineDrums:{
 				required:true,
@@ -236,7 +235,7 @@ $().ready(function() {
 			reportersSignature:"required",
 			
 			
-			iodineDate1: {
+			iodineDate_1: {
 				required: true
 				
 			},
@@ -284,7 +283,6 @@ $().ready(function() {
 			
 			},
 		messages: {
-			iodineDate1: "*Required",
 			iodineSupplier1: "*Required",
 			iodineDrums:"*Required",
 			iodineLot:"*Required",
@@ -303,7 +301,7 @@ $().ready(function() {
 			reportersSignature:"*Required",
 			
 			
-			iodineDate1: {
+			iodineDate_1: {
 				required: "Required"
 				
 			},
@@ -315,27 +313,24 @@ $().ready(function() {
 				required: "Required",
 				
 				
-			},
+			}
 		}
-	});
+	}); /*end of #internalFortified_A2*/
 	
 	$("#smallScale_A2").validate({
 
-	// validate signup form on keyup and submit
+	// validate form on keyup and submit
 		rules: {
-			premixharvestYear: "required",
-			premixDate: "required",
-			premixSupplier:"required",
 			premixLot:"required",
 			
-			premixharvestYear: {
+			harvestYear: {
 				required: true
 				
 			},
 			premixDate: {
 				required: true
 			},
-			premixSupplier: {
+			SupplierNames: {
 				required: true
 				
 			},
@@ -349,35 +344,30 @@ $().ready(function() {
 			},
 			
 		
-			premixAmount: {
+			premixAmountUsed: {
 				required: true,positiveNumber:true
 				
 			},
-			premixStock: {
+			premixInStock: {
 				required: true, zeroAndAbove:true
 				
 			},
-			premixSalt:{
+			premixSaltProduced:{
 				required:true,positiveNumber:true
-			},
-			premixLot:{
-				required:true
 			}
 			
 			},
 		messages: {
-			premixharvestYear: "*Required",
-			premixDate: "*Required",
-			premixSupplier:"*Required",
+			premixharvestYear:{required:"*Required"},
+			premixDate:{required:"*Required"},
+			SupplierNames:{required:"*Required"},
 			premixKg:{required:"*Required"},
 			premixContent:{required:"*Required"},
-			premixAmount:{required:"*Required"},
-			premixStock:{required:"*Required"},
-			premixSalt:{required:"*Required"},
-			premixLot:"*Required",
+			premixAmountUsed:{required:"*Required"},
+			premixInStock:{required:"*Required"},
+			premixSaltProduced:{required:"*Required"},
+			premixLot:"*Required"
 			
-				
-		
 		}
 	});
 	
@@ -436,7 +426,7 @@ $().ready(function() {
 	
 	$("#externalfortifiedB1").validate({
 
-	// validate signup form on keyup and submit
+	// validate  form on keyup and submit
 		rules: {
 			visitDate: "required",
 			visitTime: "required",
@@ -638,7 +628,7 @@ $().ready(function() {
 	
 	$("#internalFortified_B1").validate({
 
-	// validate signup form on keyup and submit
+	// validate  form on keyup and submit
 		rules: {
 			saltFactory: "required",
 			year: "required",
@@ -669,8 +659,7 @@ $().ready(function() {
 				
 			},
 			year: {
-				required: true,
-				minlength: 4
+				required: true
 			},
 			fortifiedDate: {
 				required: true
@@ -692,7 +681,7 @@ $().ready(function() {
 			},
 		messages: {
 			saltFactory: "*Required",
-			year: "*Required",
+			year: {required:"*Required"},
 			fortifiedDate:"*Required",
 			fortifiedWeight:{required:"*Required"},
 			compoundWeight:{required:"*Required"},
@@ -706,9 +695,9 @@ $().ready(function() {
 		}
 	});
 	
-	$("#internalFortified_C1").validate({
+	$("#internalFortified_C1").validate({/*salt module*/
 
-	// validate signup form on keyup and submit
+	// validate form on keyup and submit
 		rules: {
 			dateC1: "required",
 			productionTime: "required",
@@ -725,15 +714,15 @@ $().ready(function() {
 			notes1:"required",
 			comments1:"required",
 			logDate1:"required",
-			saltProduced2:"required",
-			premixUsed2:"required",
-			salFortified2:"required",
+			saltProduced2:{required:true,zeroAndAbove:true},
+			premixUsed2:{required:true,zeroAndAbove:true},
+			salFortified2:{required:true,zeroAndAbove:true},
 			notes2:"required",
 			responsible:"required",
 			sigNature:"required",
-			saltProduced3:"required",
-			premixUsed3:"required",
-			saltFortified3:"required",
+			saltProduced3:{required:true,zeroAndAbove:true},
+			premixUsed3:{required:true,zeroAndAbove:true},
+			saltFortified3:{required:true,zeroAndAbove:true},
 			notes3:"required",
 			
 			
@@ -786,15 +775,15 @@ $().ready(function() {
 				
 			},
 			saltProduced2: {
-				required: true
+				required: true,zeroAndAbove:true
 				
 			},
 			premixUsed2: {
-				required: true
+				required: true,zeroAndAbove:true
 				
 			},
 			saltFortified2: {
-				required: true
+				required: true,zeroAndAbove:true
 				
 			},
 			notes2: {
@@ -810,15 +799,15 @@ $().ready(function() {
 				
 			},
 			saltProduced3: {
-				required: true
+				required:true,zeroAndAbove:true
 				
 			},
 			premixUsed3: {
-				required: true
+				required:true,zeroAndAbove:true
 				
 			},
 			saltFortified3: {
-				required: true
+				required:true,zeroAndAbove:true
 				
 			},
 			notes3: {
@@ -844,9 +833,6 @@ $().ready(function() {
 			notes1:"*Required",
 			comments1:"*Required",
 			logDate1:"*Required",
-			saltProduced2:"*Required",
-			premixUsed2:"*Required",
-			saltFortified2:"*Required",
 			notes2:"*Required",
 			responsible:"*Required",
 			sigNature:"*Required",
@@ -858,9 +844,9 @@ $().ready(function() {
 		}
 	});
 	
-	$("#internalFortified_B2").validate({
+	$("#internalFortified_B2").validate({/*salt module*/
 
-	// validate signup form on keyup and submit
+	// validate form on keyup and submit
 		rules: {
 			checkupDate: "required",
 			blenderObservations: "required",
@@ -906,12 +892,12 @@ $().ready(function() {
 			sprayerObservations:"*Required",
 			checkupName:"*Required"
 		}
-	});
+	}); /*end of internalFortified_B2*/
 	
 	
 	$("#externalFortified_B3").validate({
 
-	// validate signup form on keyup and submit
+	// validate  form on keyup and submit
 		rules: {
 			inspection_registry: "required",
 			inspections_date: "required",
@@ -1033,34 +1019,161 @@ $().ready(function() {
 		}
 	});
 	
+   /*start of oil module*/
+   $("#fortifiedOil_A1").validate({/*oil module*/
 
-	/*these values will find some use later*/
 	
-	/*$("#productType").focus(function() {
-		var productType = $("#productType").val();
-		var purchaseOrder = $("#purchaseOrder").val();
-		var manufacturer =$("#manufacturer").val();
-		var inspectedBy =$("#inspectedBy").val();
-		var date =$("#date").val();
-		var quantity =$("#quantity").val();
-		var integrityObservation =$("#integrityObservation").val();
-		var lotNumber =$("#lotNumber")..is(":checked");
-		var lotObservation =$("#lotObservation").val();
-		var productionDate =$("#productionDate").is(":checked");
-		var productObservation =$("#productObservation").val();
-		var expirationDate =$("#expirationDate").is(":checked");
-		var expirationObservation =$("#expirationObservation").val();
-		var contentClaimed =$("#contentClaimed").is(":checked");
-		var contentObservation =$("#contentObservation").val();
-		var certOfanalysis =$("#certOfanalysis").is(":checked");
-		var certificateObservation =$("#certificateObservation").val();
-		var other =$("#other").val();
-		var otherObservation =$("#otherObservation").val();
-		var accepted =$("#accepted").is(":checked");
-		var rejected =$("#rejected").is(":checked");
-		var actionsTaken =$("#actionsTaken").val();
-		var receivedBy =$("#receivedBy").val();
-		var inputDate  =$("#inputDate").val();
-		
-	})*/
+		rules: {
+			
+			dateReported: {
+				required: true
+				
+			},
+			transactedBy: {
+				required: true
+			}
+			
+          /*the rest are validated in the class error 'cloned'*/
+			
+			},
+		messages: {
+			dateReported:{
+				required:"Required"},
+			transactedBy:{required:"*Required"}		
+			}
+	}); /*end of #fortifiedOil_A1*/
+	
+	$("#fortifiedOil_B1").validate({/*oil module*/
+
+	
+		rules: {
+			
+			oilFactory: {
+				required: true
+				
+			},
+			harvestYear: {
+				required: true
+			},
+			nameSignature:{
+				required:true
+			}
+			
+          /*the rest are validated in the class error 'cloned'*/
+			
+			},
+		messages: {
+			dateReported:{
+				required:"Required"},
+			transactedBy:{
+				required:"*Required"},
+			nameSignature:{
+				required:"*Required"}	
+			}
+			
+	}); /*end of #fortifiedOil_B1*/
+	
+	$("#fortifiedOil_B2").validate({/*oil module*/
+
+	// validate form on keyup and/or submit
+		rules: {
+			checkupDate: {
+				required: true
+				
+			},
+			blenderObservations: {
+				required: true
+			},
+			balanceObservations: {
+				required: true
+				
+			},
+			pumpObservations: {
+				required: true
+				
+			},
+			stirrersObservations: {
+				required: true
+				
+			},
+			feedingTubesObservations:{
+				required:true
+			},
+			blendingTankObservations:{
+				required:true
+			},
+			checkupName: {
+				required: true
+				
+			}
+			
+			},
+		messages: {
+			checkupDate: {
+				required: "*Required"
+				
+			},
+			blenderObservations: {
+				required: "*Required"
+			},
+			balanceObservations: {
+				required: "*Required"
+				
+			},
+			pumpObservations: {
+				required: "*Required"
+				
+			},
+			stirrersObservations: {
+				required: "*Required"
+				
+			},
+			feedingTubesObservations:{
+				required:"*Required"
+			},
+			blendingTankObservations:{
+				required:"*Required"
+			},
+			checkupName: {
+				required: "*Required"
+				
+			}
+		}
+	});/*end of fortifiedOil_B2*/
+	
+		$("#fortifiedOil_C1").validate({/*oil module*/
+
+	// validate form on keyup and submit
+		rules: {
+			dateC1:{required:true},
+			logDate:{required:true},
+			oilProduced2:{required:true,zeroAndAbove:true},
+			premixUsed2:{required:true,zeroAndAbove:true},
+			oilFortified2:{required:true,zeroAndAbove:true},
+			notes2:{required:true},
+			responsible:{required:true},
+			sigNature:{required:true},
+			oilProduced3:{required:true,zeroAndAbove:true},
+			premixUsed3:{required:true,zeroAndAbove:true},
+			oilFortified3:{required:true,zeroAndAbove:true},
+			notes3:{required:true},
+			},
+		messages: {
+			dateC1:{required:"*Required"},
+			logDate:{required:"*Required"},
+			oilProduced2:{required:"*Required"},
+			premixUsed2:{required:"*Required"},
+			oilFortified2:{required:"*Required"},
+			notes2:{required:"*Required"},
+			responsible:{required:"*Required"},
+			sigNature:{required:"*Required"},
+			oilProduced3:{required:"*Required"},
+			premixUsed3:{required:"*Required"},
+			oilFortified3:{required:"*Required"},
+			notes3:{required:"*Required"}
+			
+		}
+	}); /*end of fortifiedOil_C1*/
+	
+   /*end of oil module*/
 });
