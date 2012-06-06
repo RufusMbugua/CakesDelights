@@ -1,31 +1,35 @@
 <?php
 
 class C_Front extends CI_Controller {
-	var $data;
 
-	public function __construct() {
+	public function _construct() {
 
-		parent::__construct();
-	    $this->data=array();
+		parent::_construct();
+		$this -> load -> helper('url');
 
 	}
 
 	public function index() {
-		$data['form'] = '<p>You need to login.<p>';
+		$data['title'] = 'Welcome';
+		$data['content'] = "<p>Cakes Delights</p>";
 		$this -> load -> view('index', $data);
 	}//End of index file
-
-	public function vehicles() {
-		$data['status']="";
-		$data['response']="";
-		$data['form'] = '<p class="error"><br/><br/>No form has been chosen<br/><br/><p>';
-		$data['form_id']='';
-		$this -> load -> view('pages/vehicles/index', $data);
-		//echo 'Vehicles';
+	
+	public function cakes(){
+		$data['title'] = 'Cakes';
+		$data['content'] = "<p>Cakes Delights</p>";
+		$this -> load -> view('cakes', $data);
 	}
-
-	public function formviewer() {
-		$data['form'] = '<p class="error"><br/><br/>Choose a Form from the left panel to get started<br/><br/><p>';
-		$this -> load -> view('form', $data);
+	
+	public function articles(){
+		$data['title'] = 'Articles';
+		$data['content'] = "<p>Cakes Delights</p>";
+		$this -> load -> view('articles', $data);
 	}
-}?>
+public function moreinfo(){
+		$data['title'] = 'More Info.';
+		$data['content'] = "<p>Cakes Delights</p>";
+		$this -> load -> view('more_info', $data);
+	}
+}
+?>
