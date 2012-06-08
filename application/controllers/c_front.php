@@ -31,5 +31,17 @@ public function moreinfo(){
 		$data['content'] = "<p>Cakes Delights</p>";
 		$this -> load -> view('more_info', $data);
 	}
+public function getCakes(){
+	$this->load->model('models_cakesDelight/M_Cakes');
+	$this->M_Cakes->getCakesInformation();
+}
+public function getArticles(){
+	$this->load->model('models_cakesDelight/M_Articles');
+	$this->M_Articles->getArticlesInformation();
+}
+public function getArticlesFront(){
+	$this->load->model('models_cakesDelight/M_ArticlesFront');
+	$this->M_ArticlesFront->getArticlesFrontInformation();
+}
 }
 ?>
