@@ -21,4 +21,5 @@ body {
 .cake-footer {
 	height: 20%;
 	display: block;
+	border:1px solid black;
 }

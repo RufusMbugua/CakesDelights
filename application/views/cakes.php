@@ -54,7 +54,7 @@
 							<section class="cake-footer"></section>
 						</section>
 						<section class="main-page-tiles">
-<section class="cake-image"></section>
+							<section class="cake-image"></section>
 							<section class="cake-title">
 								White Forest
 							</section>
@@ -63,12 +63,16 @@
 						</section>
 						<section class="right-align">
 							<section class="main-page-tiles" style="margin-right:0">
-<section class="cake-image"></section>
-							<section class="cake-title">
-								Carot / Cheese 
-							</section>
-							<section class="cake-description"></section>
-							<section class="cake-footer"></section>
+								<section class="cake-image"></section>
+								<section class="cake-title">
+									Carot / Cheese
+								</section>
+								<section class="cake-description">
+									This is a very delicious cake
+								</section>
+								<section class="cake-footer">
+									<button class="awesome blue" style="float:right" style=" bottom:0">Buy</button>
+								</section>
 							</section>
 
 						</section>
