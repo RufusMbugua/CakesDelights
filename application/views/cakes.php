@@ -10,10 +10,12 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/post.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/tabs.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/form.css"/>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>css/cakes.css"/>
 		<!-- Attach JavaScript files -->
 		<script src="js/jquery-1.5.1.min.js" type="text/javascript"></script>
 		<script src="js/jquery.orbit.js" type="text/javascript"></script>
-		<title><?php echo $title ?></title>
+		<title><?php echo $title
+			?></title>
 	</head>
 	<body>
 
@@ -44,14 +46,29 @@
 					<section class="tile-area">
 
 						<section class="main-page-tiles" style="margin-right:4.5%">
-
+							<section class="cake-image"></section>
+							<section class="cake-title">
+								Black Forest
+							</section>
+							<section class="cake-description"></section>
+							<section class="cake-footer"></section>
 						</section>
 						<section class="main-page-tiles">
-
+<section class="cake-image"></section>
+							<section class="cake-title">
+								White Forest
+							</section>
+							<section class="cake-description"></section>
+							<section class="cake-footer"></section>
 						</section>
 						<section class="right-align">
 							<section class="main-page-tiles" style="margin-right:0">
-
+<section class="cake-image"></section>
+							<section class="cake-title">
+								Carot / Cheese 
+							</section>
+							<section class="cake-description"></section>
+							<section class="cake-footer"></section>
 							</section>
 
 						</section>

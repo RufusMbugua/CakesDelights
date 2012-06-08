@@ -101,3 +101,23 @@
 	font-weight: bold;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: ContenG;
+	src: url("fonts/ContenG.ttf");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Tangerine Bold;
+	src: url("fonts/Tangerine_Bold.ttf");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: Tangerine Regular;
+	src: url("fonts/Tangerine_Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
