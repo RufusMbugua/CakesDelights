@@ -21,22 +21,7 @@
 		<section class="current-body">
 			<section class="main">
 				<header>
-					<nav>
-						<ul>
-							<li>
-								<a>Home</a>
-							</li>
-							<li>
-								<a>Cakes</a>
-							</li>
-							<li>
-								<a>Articles</a>
-							</li>
-							<li>
-								<a>More Info.</a>
-							</li>
-						</ul>
-					</nav>
+					<?php $this->load->view('navigation'); ?>
 				</header>
 				<section class="content">
 

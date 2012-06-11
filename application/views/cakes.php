@@ -22,14 +22,13 @@
 		<section class="current-body">
 			<section class="main">
 				<header>
-					<?php $this->load->view('navigation'); ?>
+					<?php $this -> load -> view('navigation'); ?>
 				</header>
 				<section class="content">
 					<section class="search">
 						<input type="search" placeholder="Search"/>
 					</section>
 					<section class="tile-area">
-
 						<section class="main-page-tiles" style="margin-right:4.5%">
 							<section class="cake-image"></section>
 							<section class="cake-title">
@@ -56,7 +55,9 @@
 									This is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cake
 								</section>
 								<section class="cake-footer">
-									<button class="awesome blue" style="float:right" style=" bottom:0">Buy</button>
+									<button class="awesome blue" style="float:right" style=" bottom:0">
+										Buy
+									</button>
 								</section>
 							</section>
 
