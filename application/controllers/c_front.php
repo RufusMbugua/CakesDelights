@@ -18,7 +18,7 @@ class C_Front extends CI_Controller {
 	
 	public function cakes(){
 		$this->getCakes();
-		$this->data['cakesTitle']="cakes";
+		$this->data['title']="Cakes";
 		$this->data['content'] = "<p>Cakes Delights</p>";
 		$this -> load -> view('cakes', $this->data);
 	}

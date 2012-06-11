@@ -14,8 +14,7 @@
 		<!-- Attach JavaScript files -->
 		<script src="js/jquery-1.5.1.min.js" type="text/javascript"></script>
 		<script src="js/jquery.orbit.js" type="text/javascript"></script>
-		<title><?php echo $title
-			?></title>
+		<title><?php echo $title; ?></title>
 	</head>
 	<body>
 
@@ -40,7 +39,7 @@
 									<?php print $value['description'].'<br/>';?>
 								<?php print '</section> 
 								<section class="cake-footer">'?>
-								    <?php print $value['tags'];?>
+								    <?php print $value['tags'].'<br/>';?>
 									<?php print '<button class="awesome blue" style="float:right" style=" bottom:0">Buy</button><br />
 								</section>
 							</section>

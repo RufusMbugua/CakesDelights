@@ -19,13 +19,13 @@ class M_Cakes  extends MY_Model {
 	      $query = $this->em->createQuery('SELECT c.cakesTitle,c.description,c.cakesPrice,c.tags FROM models\Entities\cakesDelight\E_Cakes c');
           
           $this->cakes = $query->getResult();
-						foreach ($this->cakes as $key=>$value) {
+						//foreach ($this->cakes as $key=>$value) {
 									//print $this->cakes[$key]['cakesDescription'];
 							        //print $this->cakes[$key]['cakeFooter'];
-									print $value['description'];
-									print $value['tags'];
+									//print $value['description'];
+									//print $value['tags'];
 									//var_dump($this->cakes);
-								  }
+								//  }
 		   return $this->cakes;
 		   
 	}/*close getManucDevicesByIodizationCenter($iodizationCentreName)*/
