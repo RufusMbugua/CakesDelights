@@ -28,41 +28,29 @@
 					<section class="search">
 						<input type="search" placeholder="Search"/>
 					</section>
-					<section class="tile-area">
-
-						<section class="main-page-tiles" style="margin-right:4.5%">
-							<section class="cake-image"></section>
-							<section class="cake-title">
-								Black Forest
-							</section>
-							<section class="cake-description"></section>
-							<section class="cake-footer"></section>
-						</section>
-						<section class="main-page-tiles">
-							<section class="cake-image"></section>
-							<section class="cake-title">
-								White Forest
-							</section>
-							<section class="cake-description"></section>
-							<section class="cake-footer"></section>
-						</section>
+					<?php foreach ($cakes as $key => $value) {?>
+					<?php print '<section class="tile-area">
 						<section class="right-align">
 							<section class="main-page-tiles" style="margin-right:0">
 								<section class="cake-image"></section>
-								<section class="cake-title">
-									Carot / Cheese
-								</section>
-								<section class="cake-description">
-									This is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cakeThis is a very delicious cake
-								</section>
-								<section class="cake-footer">
-									<button class="awesome blue" style="float:right" style=" bottom:0">Buy</button>
+								<section class="cake-title"><br />' ?>
+									<?php print $value['cakesTitle'].'<br/>';?>
+								<?php print '</section>
+								<section class="cake-description">';?>
+									<?php print $value['description'].'<br/>';?>
+								<?php print '</section> 
+								<section class="cake-footer">'?>
+								    <?php print $value['tags'];?>
+									<?php print '<button class="awesome blue" style="float:right" style=" bottom:0">Buy</button><br />
 								</section>
 							</section>
 
-						</section>
+						</section> 
 
-					</section>
+					</section>';
+					
+				 }?>
+					
 					<section class="tile-area">
 
 						<section class="main-page-tiles" style="margin-right:4.5%">

@@ -1,10 +1,11 @@
 <?php
 
 class C_Front extends CI_Controller {
-
+    var $data;
 	public function _construct() {
 
 		parent::_construct();
+		$this->data='';
 		$this -> load -> helper('url');
 
 	}
@@ -16,9 +17,10 @@ class C_Front extends CI_Controller {
 	}//End of index file
 	
 	public function cakes(){
-		$data['title'] = 'Cakes';
-		$data['content'] = "<p>Cakes Delights</p>";
-		$this -> load -> view('cakes', $data);
+		$this->getCakes();
+		$this->data['cakesTitle']="cakes";
+		$this->data['content'] = "<p>Cakes Delights</p>";
+		$this -> load -> view('cakes', $this->data);
 	}
 	
 	public function articles(){
@@ -34,6 +36,9 @@ public function moreinfo(){
 public function getCakes(){
 	$this->load->model('models_cakesDelight/M_Cakes');
 	$this->M_Cakes->getCakesInformation();
+	$this->data['cakes']=$this->M_Cakes->cakes;
+	//$this->load->view('cakes', $data);
+	
 }
 public function getArticles(){
 	$this->load->model('models_cakesDelight/M_Articles');
