@@ -28,6 +28,10 @@ private $description;
 * @Column(name="cakesPrice", type="string",length=45, nullable=true)
 * */
 private $cakesPrice;
+/**
+* @Column(name="tags", type="string", nullable=true)
+* */
+private $tags;
 public function getCakesID() {
 		return $this ->cakesID;
 }
@@ -58,6 +62,12 @@ public function getCakesPrice() {
 }
 
 public function setCakesPrice($cakesPrice) { $this -> cakesPrice = $cakesPrice;
+}
+public function getTags() {
+		return $this -> tags;
+}
+
+public function setTags($tags) { $this -> tags = $tags;
 }
 }
 ?>
