@@ -25,47 +25,89 @@
 				</header>
 				<section class="content">
 					<section class="search">
-						<input type="search" placeholder="Search"/>
+						<form>
+							<input type="search" placeholder="Search"/>
+						</form>
+						
 					</section>
-					<?php foreach ($cakes as $key => $value) {?>
-					<?php print '<section class="tile-area">
+					<?php 
+					$count=1;
+					print '
+					<section class="tile-area">';
+					foreach ($cakes as $key => $value) {				 
+				    if($count%3==0){
+					print '
 						<section class="right-align">
 							<section class="main-page-tiles" style="margin-right:0">
 								<section class="cake-image"></section>
-								<section class="cake-title"><br />' ?>
-									<?php print $value['cakesTitle'].'<br/>';?>
+								<section class="cake-title">' ?>
+									<?php print $value['cakesTitle'];?>
 								<?php print '</section>
 								<section class="cake-description">';?>
-									<?php print $value['description'].'<br/>';?>
+									<?php print $value['description'];?>
 								<?php print '</section> 
 								<section class="cake-footer">'?>
-								    <?php print $value['tags'].'<br/>';?>
-									<?php print '<button class="awesome blue" style="float:right" style=" bottom:0">Buy</button><br />
+								    <?php print $value['tags'];
+								    echo $count;?>
+									<?php print '<button class="awesome " style="float:right" style=" bottom:0">Buy</button><br />
 								</section>
 							</section>
 
 						</section> 
 
-					</section>';
-					
-				 }?>
-					
-					<section class="tile-area">
-
-						<section class="main-page-tiles" style="margin-right:4.5%">
-
-						</section>
-						<section class="main-page-tiles">
-
-						</section>
-						<section class="right-align">
-							<section class="main-page-tiles" style="margin-right:0">
-
-							</section>
-
-						</section>
-
 					</section>
+					
+					<section class="tile-area">';
+				    }
+					elseif ($count%3==1){
+						
+				    print '
+											
+							<section class="main-page-tiles" style="margin-right:4.5%">
+								<section class="cake-image"></section>
+								<section class="cake-title">' ?>
+									<?php print $value['cakesTitle'];?>
+								<?php print '</section>
+								<section class="cake-description">';?>
+									<?php print $value['description'];?>
+								<?php print '</section> 
+								<section class="cake-footer">'?>
+								    <?php print $value['tags'];
+								    echo $count; ?>
+									<?php print '<button class="awesome " style="float:right" style=" bottom:0">Buy</button><br />
+								</section>
+							
+					</section>';
+					}
+					elseif ($count%3==2){
+						
+				    print '
+											
+							<section class="main-page-tiles" >
+								<section class="cake-image"></section>
+								<section class="cake-title">' ?>
+									<?php print $value['cakesTitle'];?>
+								<?php print '</section>
+								<section class="cake-description">';?>
+									<?php print $value['description'];?>
+								<?php print '</section> 
+								<section class="cake-footer">'?>
+								    <?php print $value['tags'];
+								    echo $count; ?>
+									<?php print '<button class="awesome " style="float:right" style=" bottom:0">Buy</button><br />
+								</section>
+							
+					</section>';
+					}
+					
+					$count++;
+				 }
+					
+				
+				 
+				 ?>
+					
+					
 					<section class="paginate"></section>
 
 				</section>
