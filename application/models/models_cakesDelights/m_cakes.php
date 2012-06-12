@@ -15,12 +15,10 @@ class M_Cakes  extends MY_Model {
 			                       
 			 $this->elements=array();         */             
 	      /*using DQL*/
-<<<<<<< HEAD:application/models/models_cakesDelights/m_cakes.php
+
 	      $query = $this->em->createQuery('SELECT c.cakesTitle,c.description,c.cakesPrice,c.tags FROM models\Entities\entities_cakesDelights\E_Cakes c');
-=======
-	      
-	      $query = $this->em->createQuery('SELECT c.cakesTitle,c.description,c.cakesPrice,c.tags FROM models\Entities\cakesDelight\E_Cakes c');
->>>>>>> f3bc20d971eab32b12a04ff8b0fed2bc12e66c2e:application/models/models_cakesDelight/m_cakes.php
+  
+
           
           $this->cakes = $query->getResult();
 						//foreach ($this->cakes as $key=>$value) {
