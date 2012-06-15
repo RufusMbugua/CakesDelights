@@ -7,7 +7,7 @@ if (!defined('BASEPATH'))
 use application\models\Entities\cakesDelight\E_Cakes;
 
 class M_Cakes  extends MY_Model {
-	var $cakes, $tags;
+	var $cakes, $tags, $tagsInput;
 	function getCakesInformation(){
 		   //get registered devices' details
 			/*$this->equipment=$this->em->getTags('models\Entities\cakesDelight\E_Cakes')
@@ -27,6 +27,7 @@ class M_Cakes  extends MY_Model {
 									//var_dump($this->cakes);
 								//  }
 		   return $this->cakes;
+		   $this->tagsInput = '';
 		   
 	}/*close getManucDevicesByIodizationCenter($iodizationCentreName)*/
 	

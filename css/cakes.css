@@ -4,7 +4,7 @@ body {
 
 .cake-image{
 	height: 40%;
-	border:1px solid black;
+	
 	display: block;
 }
 .cake-title {
@@ -13,13 +13,15 @@ body {
 	text-align:center;
 	font-size:200%;
 	display: block;
+	color:#FFFFFF;
+	background:#333;
 }
 .cake-description {
 	height: 30%;
 	display: block;
+	background: #FFFF66;
 }
 .cake-footer {
 	height: 20%;
 	display: block;
-	border:1px solid black;
 }
