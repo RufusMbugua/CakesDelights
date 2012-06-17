@@ -13,7 +13,6 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/cakes.css"/>
 		<!-- Attach JavaScript files -->
 		<script src="js/jquery-1.5.1.min.js" type="text/javascript"></script>
-		<script src="js/jquery.orbit.js" type="text/javascript"></script>
 		<title><?php echo $title; ?></title>
 	</head>
 	<body>
@@ -26,7 +25,7 @@
 				<section class="content">
 					<section class="search">
 						<form>
-							<input type="search" placeholder="Search"/>
+							<input type="search" placeholder="Search" onkeypress="showText()"/>
 						</form>
 						
 					</section>
@@ -106,7 +105,12 @@
 				
 				 
 				 ?>
-					
+					<script>
+					function showText(){
+						alert('Typed');
+					};
+						
+					</script>
 					
 					<section class="paginate"></section>
 
@@ -117,5 +121,6 @@
 
 			</section>
 		</section>
+		  <script src="http://code.jquery.com/jquery-latest.js"></script>
 	</body>
 </html>
