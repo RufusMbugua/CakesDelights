@@ -7,6 +7,11 @@ body {
 	
 	display: block;
 }
+.cake-image{
+	height: 40%;
+	
+	display: block;
+}
 .cake-title {
 	height: 10%;
 	font-family:Quicksand ;
@@ -15,13 +20,16 @@ body {
 	display: block;
 	color:#FFFFFF;
 	background:#333;
+	opacity:0.85;
 }
 .cake-description {
 	height: 30%;
 	display: block;
 	background: #FFFF66;
+	padding:5% 5% 5% 5%;
 }
 .cake-footer {
 	height: 20%;
 	display: block;
+	padding:5% 5% 5% 5%;
 }

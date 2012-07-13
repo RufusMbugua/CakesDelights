@@ -33,10 +33,10 @@
 					<section class="image-scroller">
 						<div class="slider-wrapper theme-default">
 							<div id="slider" class="nivoSlider">
-								<img src="<?php echo base_url(); ?>images/toystory.jpg" data-thumb="<?php echo base_url(); ?>images/toystory.jpg" alt="" />
-								<a href="http://dev7studios.com"><img src="<?php echo base_url(); ?>images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
-								<img src="<?php echo base_url(); ?>images/walle.jpg" data-thumb="<?php echo base_url(); ?>images/walle.jpg" alt="" data-transition="slideInLeft" />
-								<img src="<?php echo base_url(); ?>images/nemo.jpg" data-thumb="<?php echo base_url(); ?>images/nemo.jpg" alt="" title="#htmlcaption" />
+								<img src="<?php echo base_url(); ?>images/a_IMG_6772.jpg" data-thumb="<?php echo base_url(); ?>images/toystory.jpg" alt="" />
+								<img src="<?php echo base_url(); ?>images/IMG_8119.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" />
+								<img src="<?php echo base_url(); ?>images/IMG_9008.jpg" data-thumb="<?php echo base_url(); ?>images/IMG_9008.jpg" alt=""/>
+								<img src="<?php echo base_url(); ?>images/IMG_8111.jpg" data-thumb="<?php echo base_url(); ?>images/IMG_9008.jpg" alt=""/>
 							</div>
 							<div id="htmlcaption" class="nivo-html-caption">
 								<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.

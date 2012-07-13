@@ -38,7 +38,11 @@
 					print '
 						<section class="right-align">
 							<section class="main-page-tiles" style="margin-right:0">
-								<section class="cake-image"></section>
+								
+							 <section class="cake-image"><img src=';
+								echo base_url().'images/small/IMG_8111_s.jpg>';
+								print '</img>
+								</section>
 								<section class="cake-title">' ?>
 									<?php print $value['cakesTitle'];?>
 								<?php print '</section>
@@ -63,7 +67,11 @@
 				    print '
 											
 							<section class="main-page-tiles" style="margin-right:4.5%">
-								<section class="cake-image"></section>
+									
+							 <section class="cake-image"><img src=';
+								echo base_url().'images/small/IMG_8080_s.jpg>';
+								print '</img>
+								</section>
 								<section class="cake-title">' ?>
 									<?php print $value['cakesTitle'];?>
 								<?php print '</section>
