@@ -1,5 +1,5 @@
 <?php
-namespace models\Entities\cakesDelights;
+namespace models\Entities\entities_cakesDelights;
 
 /**
  * @Entity
@@ -28,6 +28,17 @@ private $title;
 * @Column(name="userName", type="string",length=45, nullable=true)
 * */
 private $userName;
+
+/**
+* @Column(name="articleBody", type="string",length=45, nullable=true)
+* */
+private $articleBody;
+/**
+* @Column(name="tags", type="string",length=45, nullable=true)
+* */
+private $tags;
+
+
 public function getArticlesID() {
 		return $this -> articlesID;
 }
@@ -57,6 +68,18 @@ public function getUserName() {
 }
 
 public function setUserName($userName) { $this -> userName = $userName;
+}
+public function getArticleBody() {
+		return $this -> ArticleBody;
+}
+
+public function setArticleBody($ArticleBody) { $this -> ArticleBody= $ArticleBody;
+}
+public function getTags() {
+		return $this -> tags;
+}
+
+public function setTags($tags) { $this -> tags = $tags;
 }
 }
 ?>

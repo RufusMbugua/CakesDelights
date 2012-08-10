@@ -2,7 +2,7 @@
 $dbHost="localhost";
 $dbName="fortification";
 $dbUser="root";
-$dbPass="";
+$dbPass="thepass";
 @$con= new MySQLi($dbHost,$dbUser,$dbPass,$dbName);//establish a database connection
 
 $GLOBALS=array($con);
