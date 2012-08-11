@@ -16,5 +16,8 @@
 		<li>
 			<?php echo anchor(base_url() . 'c_front/moreinfo', 'More Info.'); ?>
 		</li>
+		<li>
+			<?php echo anchor(base_url() . 'c_front/ArticleCreator', 'Editor'); ?>
+		</li>
 	</ul>
 </nav>
