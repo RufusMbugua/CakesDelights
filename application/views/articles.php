@@ -13,10 +13,10 @@
 		<!-- Attach JavaScript files -->
 		<script src="js/jquery-1.5.1.min.js" type="text/javascript"></script>
 		<script src="js/jquery.orbit.js" type="text/javascript"></script>
-		<title><?php echo $title
-			?></title>
+		<title><?php echo $title?></title>
 	</head>
 	<body>
+		
 
 		<section class="current-body">
 			<section class="main">
@@ -24,7 +24,21 @@
 					<?php $this->load->view('navigation'); ?>
 				</header>
 				<section class="content">
-
+                    <?php 
+							foreach($articles as $article):
+									echo "TITLE :<strong><u>".$article['TITLE']."</u></strong>&nbsp;CREATED: ".$article['DATE']."<p>";
+									echo $article['BODY']."<p>";
+									echo "<hr/><p>TAGS:<p>";
+									echo $article['TAG'];
+									echo "<p><hr/><hr/><br/>";	
+										
+									
+									endforeach;
+									
+					 ?>	
+									</section>
+									
+					<!--			
 					<section class="within">
 						<section class="sidebar">
 
@@ -41,6 +55,15 @@
 
 								<section class="right-align">
 									<section class="article-tiles" style="margin-right:0">
+
+										
+										
+										
+										
+										
+										
+										
+										
 
 									</section>
 
@@ -86,6 +109,7 @@
 				<footer>
 
 				</footer>
+				-->
 
 			</section>
 		</section>
