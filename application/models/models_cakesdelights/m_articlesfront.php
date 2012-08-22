@@ -4,8 +4,10 @@ if (!defined('BASEPATH'))
 /**
  *model to E_Articles entity
  */
-use application\models\Entities\entities_cakesdelights\e_articles;
-use applications\models\Entities\entities_cakesdelights\e_testimonials;
+
+use application\models\Entities\entities_cakesDelights\E_Articles;
+use applications\models\Entities\entities_cakesDelights\E_Testimonials;
+
 class M_ArticlesFront  extends MY_Model {
 	var $articlesFront;
 	function getArticlesFrontInformation(){

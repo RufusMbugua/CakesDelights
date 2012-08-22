@@ -163,7 +163,7 @@
 	
 	});
 	
-		<script id="scripts" type="text/javascript">
+		
 		//load  scripts assynchronously
         (function() {
 
@@ -176,7 +176,6 @@
 		 var s = document.getElementById('scripts');
 		
 		 s.parentNode.insertBefore(myscript, s);})();
-		</script>
 		
 
 

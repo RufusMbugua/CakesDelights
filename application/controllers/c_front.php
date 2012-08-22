@@ -7,7 +7,7 @@ class C_Front extends CI_Controller {
 
 		parent::_construct();
 		$this -> data = '';
-		$this -> load -> helper('url');
+		$this->load->helper(array('form','url'));
 		$this -> count = 1;
 
 	}
@@ -27,10 +27,11 @@ class C_Front extends CI_Controller {
 	}
 
 	public function articles() {
-		$this -> getArticles();
-		$data['title'] = 'Articles Page';
-		$data['content'] = "<p>Cakes Delights</p>";
-		$this -> load -> view('articles', $data);
+
+	
+		$this->getArticles();
+		
+
 	}
 
 	public function moreinfo() {
@@ -48,14 +49,48 @@ class C_Front extends CI_Controller {
 	}
 
 	public function getArticles() {
-		$this -> load -> model('models_cakesdelights/M_Articles');
-		$this -> M_Articles -> getArticlesInformation();
-		$this -> data['articles'] = $this -> M_Articles ->articles;
-	}
+
+		$this -> load -> model('models_cakesDelights/M_Articles');
+		$this -> data['content'] = "<p>Articles Cakes Delights</p>";
+		$this->data['title']="View Articles";
+        $this -> data['articles'] = $this -> M_Articles ->getArticlesInformation();
+        $this -> load -> view('articles', $this -> data);
+			}
 
 	public function getArticlesFront() {
 		$this -> load -> model('models_cakesdelights/M_ArticlesFront');
 		$this -> M_ArticlesFront -> getArticlesFrontInformation();
+	}
+	
+	public function ArticleCreator(){
+		$this->data['title']="Article Creator";
+		$this -> load -> view('article_post', $this -> data);
+		
+		
+		
+	}
+	
+	public function setArticles(){
+		@$title=$_POST['title'];
+		@$content=$_POST['body'];
+		@$tags=$_POST['tags'];
+		$thedate=date('Y-m-d');
+		
+		$data = array(
+           'articlesID`' => 'NULL' ,
+           'author' => 'Marete' ,
+           'dates' => $thedate,
+           'title' => $title ,
+           'userName' => 'mbuguarufus' ,
+           'articleBody' => $content,
+           'tags' => $tags
+        );
+
+       $this->db->insert('articles', $data); 
+
+		$this -> data['hed'] = "Article Creator";
+		$this -> data['content'] = "<p>Article Posted Successfully</p>";
+		$this -> load -> view('article_success', $this -> data);
 	}
 
 }
