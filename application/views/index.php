@@ -62,7 +62,9 @@
 										Twitter feed loading
 									</li>
 								</ul>
-								<a href="https://twitter.com/RufusMbugua" class="twitter-follow-button" data-show-count="true" data-size="large" style="padding-left:5px">Follow @RufusMbugua</a>
+								<div style="padding-left:10px">
+									<a href="https://twitter.com/cakes_delights" class="twitter-follow-button" data-show-count="true" data-size="large" >Follow @cakes_delights</a>
+								</div>
 								<script>
 									! function(d, s, id) {
 										var js, fjs = d.getElementsByTagName(s)[0];
@@ -100,6 +102,6 @@
 
 		</script>
 		<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-		<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/RufusMbugua.json?callback=twitterCallback2&count=5"></script>
+		<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/cakes_delights.json?callback=twitterCallback2&count=5"></script>
 	</body>
 </html>

@@ -159,7 +159,37 @@ ul li.last {
 	font-family: Tangerine Regular;
 	font-size: 40px;
 }
-
+.upload {
+	height: 500px;
+}
+.upload form {
+	padding-top: 100px;
+}
+.upload h2 {
+	font-size: 30px;
+	padding-top: 2em;
+	font-weight: bold;
+}
+.upload p {
+	background-image: linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -o-linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -moz-linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -webkit-linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -ms-linear-gradient(bottom, rgb(179,43,43) 25%, rgb(194,74,74) 99%);
+	background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.25, rgb(179,43,43)),
+	color-stop(0.99, rgb(194,74,74))
+	);
+	color: white;
+	width: 50%;
+	padding: 0.5em;
+	border-radius: 5px;
+	font-size: 16px;
+	-webkit-box-shadow: 0 2px 6px 0.5px #000;
+}
 #twitter_update_list {
 	font-size: 13px;
 	line-height: 21px;

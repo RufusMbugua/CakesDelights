@@ -27,7 +27,8 @@ class C_Front extends CI_Controller {
 	}
 
 	public function articles() {
-		$data['title'] = 'Articles';
+		$this -> getArticles();
+		$data['title'] = 'Articles Page';
 		$data['content'] = "<p>Cakes Delights</p>";
 		$this -> load -> view('articles', $data);
 	}
@@ -39,7 +40,7 @@ class C_Front extends CI_Controller {
 	}
 
 	public function getCakes() {
-		$this -> load -> model('models_cakesDelights/M_Cakes');
+		$this -> load -> model('models_cakesdelights/M_Cakes');
 		$this -> M_Cakes -> getCakesInformation();
 		$this -> data['cakes'] = $this -> M_Cakes -> cakes;
 		//$this->load->view('cakes', $data);
@@ -47,12 +48,13 @@ class C_Front extends CI_Controller {
 	}
 
 	public function getArticles() {
-		$this -> load -> model('models_cakesDelights/M_Articles');
+		$this -> load -> model('models_cakesdelights/M_Articles');
 		$this -> M_Articles -> getArticlesInformation();
+		$this -> data['articles'] = $this -> M_Articles ->articles;
 	}
 
 	public function getArticlesFront() {
-		$this -> load -> model('models_cakesDelights/M_ArticlesFront');
+		$this -> load -> model('models_cakesdelights/M_ArticlesFront');
 		$this -> M_ArticlesFront -> getArticlesFrontInformation();
 	}
 

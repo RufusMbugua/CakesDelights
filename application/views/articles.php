@@ -28,6 +28,7 @@
 					<section class="within">
 						<section class="sidebar">
 
+
 						</section>
 						<section class="tile-area-x2">
 
@@ -70,7 +71,31 @@
 
 								<section class="right-align">
 									<section class="article-tiles" style="margin-right:0">
-
+										
+										<?php
+										
+										$this -> load -> model('models_cakesDelights/M_Articles');
+		$this -> M_Articles -> getArticlesInformation();
+		$this -> articles = $this -> M_Articles ->articles;
+										
+										foreach ($this -> articles as $key => $value) {
+												
+											
+											print $value['title']."<br/>";
+											//print $value['dates']."&nbsp;";
+											//print $value['author']."<br/>";
+											//print $value['articleBody']."<br/>";
+											
+											
+										}
+										
+										
+										
+										?>
+										
+										
+										
+										
 									</section>
 
 								</section>
