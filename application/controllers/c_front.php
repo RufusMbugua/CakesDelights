@@ -15,6 +15,7 @@ class C_Front extends CI_Controller {
 	public function index() {
 		$data['title'] = 'Welcome';
 		$data['content'] = "<p>Cakes Delights</p>";
+		$this->cakeSearch();
 		$this -> load -> view('index', $data);
 	}//End of index file
 
@@ -88,6 +89,67 @@ class C_Front extends CI_Controller {
 		$this -> data['hed'] = "Article Creator";
 		$this -> data['content'] = "<p>Article Posted Successfully</p>";
 		$this -> load -> view('article_success', $this -> data);
+	}
+	
+public function getCakesInfo(){
+	
+	$val=@$_POST['txtsearch'];
+	//echo $val;
+	$query=$this->db->query("select * from cakes where cakeName='$val'");
+	if($query->num_rows()>0){
+	  
+	  $this -> data['cakes']=$query->result();
+	  $this -> data['title'] = "Cake Details";
+	  $this -> load -> view('cake_v', $this -> data);
+		
+    }
+    else{
+     $this -> data['message'] = "NO MATCH";
+     $this -> load -> view('navigation', $this -> data);	
+	 	
+    }
+	
+	
+		
+}	
+	
+	
+	
+	
+	
+	
+	
+	public function cakeSearch(){
+		
+	
+	@$q = strtolower($_GET["q"]);
+	if (!$q){
+	
+	
+	}
+	else{
+ 
+	$this -> data['title']="Cake Details";
+	$query =$this -> db->query("select cakeName from cakes where cakeName LIKE '%$q%'");
+	if($query->num_rows()>0){
+	foreach ($query->result() as $row){
+		
+	  Print $row->cakeName."\n";
+       
+    }
+	
+	
+	}
+	else{
+				
+	Print "No Results \n";		
+		
+	}
+			
+	}	
+		
+		
+		
 	}
 
 }

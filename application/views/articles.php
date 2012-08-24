@@ -3,7 +3,7 @@
 		<link href="<?php echo base_url(); ?>css/layout.css" rel="stylesheet" type="text/css" />
 		<!-- -->
 		<!-- Attach CSS files -->
-		<link rel="stylesheet" href="<?php echo base_url(); ?>css/layout.css"/>
+		
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/awesomebuttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/buttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/orbit.css"/>

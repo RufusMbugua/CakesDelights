@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
 /**
  *model to E_Cakes entity
  */
-use application\models\Entities\cakesDelights\E_Cakes;
+use application\models\Entities\entities_cakesDelights\E_Cakes;
 
 class M_Cakes  extends MY_Model {
 	var $cakes, $tags;
