@@ -42,9 +42,14 @@ bkLib.onDomLoaded(function() {
 
 
 <body>
+	<section class="current-body">
+	<section class="main">
 <header>
 <?php $this->load->view('navigation');?>
 </header>
+
+	
+	
 <section class="content">
 <form name="articlecreator" action="<?php echo base_url() ?>c_front/setArticles" method="POST">
 <fieldset>
@@ -71,7 +76,11 @@ bkLib.onDomLoaded(function() {
 
 </fieldset>
 </form>
+</section>	
+	
 </section>
+</section>
+
 
 </body>
 </html>

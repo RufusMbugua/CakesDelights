@@ -11,6 +11,7 @@ body {
 	height: 40%;
 	
 	display: block;
+	overflow:hidden;
 }
 .cake-title {
 	height: 10%;
