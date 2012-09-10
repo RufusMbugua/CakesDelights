@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
 /**
  *model to E_Cakes entity
  */
-use application\models\Entities\entities_cakesdelights\e_cakes;
+use application\models\Entities\entities_cakesDelights\E_Cakes;
 
 class M_Cakes  extends MY_Model {
 	var $cakes, $tags;
@@ -16,7 +16,7 @@ class M_Cakes  extends MY_Model {
 		 $this->elements=array();         */
 		/*using DQL*/
 
-		$query = $this -> em -> createQuery('SELECT c.cakesTitle,c.description,c.cakesPrice,c.tags FROM models\Entities\entities_cakesDelights\e_cakes c');
+		$query = $this -> em -> createQuery('SELECT c.cakesTitle,c.description,c.cakesPrice,c.tags FROM models\Entities\entities_cakesDelights\E_Cakes c');
 
 		$this -> cakes = $query -> getResult();
 		//foreach ($this->cakes as $key=>$value) {

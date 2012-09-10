@@ -1,5 +1,5 @@
 <?php
-namespace models\Entities\entities_cakesdelights;
+namespace models\Entities\entities_cakesDelights;
 
 /**
  * @Entity

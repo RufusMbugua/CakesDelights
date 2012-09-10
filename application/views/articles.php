@@ -3,7 +3,7 @@
 		<link href="<?php echo base_url(); ?>css/layout.css" rel="stylesheet" type="text/css" />
 		<!-- -->
 		<!-- Attach CSS files -->
-		<link rel="stylesheet" href="<?php echo base_url(); ?>css/layout.css"/>
+		
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/awesomebuttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/buttons.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/orbit.css"/>
@@ -41,7 +41,6 @@
 					<!--			
 					<section class="within">
 						<section class="sidebar">
-
 
 						</section>
 						<section class="tile-area-x2">
@@ -94,31 +93,7 @@
 
 								<section class="right-align">
 									<section class="article-tiles" style="margin-right:0">
-										
-										<?php
-										
-										$this -> load -> model('models_cakesDelights/M_Articles');
-		$this -> M_Articles -> getArticlesInformation();
-		$this -> articles = $this -> M_Articles ->articles;
-										
-										foreach ($this -> articles as $key => $value) {
-												
-											
-											print $value['title']."<br/>";
-											//print $value['dates']."&nbsp;";
-											//print $value['author']."<br/>";
-											//print $value['articleBody']."<br/>";
-											
-											
-										}
-										
-										
-										
-										?>
-										
-										
-										
-										
+
 									</section>
 
 								</section>

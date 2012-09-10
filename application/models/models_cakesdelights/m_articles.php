@@ -4,9 +4,7 @@ if (!defined('BASEPATH'))
 /**
  *model to E_Cakes entity
  */
-
 use application\models\Entities\entities_cakesDelights\E_Articles;
-
 
 class M_Articles  extends MY_Model {
 	var $articles;
@@ -17,11 +15,10 @@ class M_Articles  extends MY_Model {
 			                       
 			                       
 	      /*using DQL*/
-
 	      $query = $this->em->createQuery('SELECT a.title AS TITLE,a.dates AS DATE,a.articleBody AS BODY,a.tags AS TAG FROM models\Entities\entities_cakesDelights\E_Articles a');
           
           $this->articles = $query->getResult();
-
+						
 		   return $this->articles;
 		
 	}
