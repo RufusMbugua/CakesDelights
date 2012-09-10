@@ -25,12 +25,13 @@ body {
 	-moz-box-shadow: 0 0 6px 1px #333;
 	-webkit-box-shadow: 0 0 6px 1px #333;
 	-o-box-shadow: 0 0 6px 1px #333;
+	padding:1%;
 }
 header {
 	padding: 10px 10px 5px 0;
 	border-bottom: 3px solid #999;
 	margin-bottom: 20px;
-	height: 10%;
+	height: 13%;
 }
 footer {
 	padding: 10px 10px 20px 0;
@@ -210,4 +211,11 @@ ul li.last {
 
 #twitter_update_list ul li span a {
 	color: #6f7276;
+}
+
+.ac_results{
+	box-shadow: 1px 1px 3px 1px #CCC;
+	-moz-box-shadow: 1px 1px 3px 1px #CCC;
+	-webkit-box-shadow: 1px 1px 3px 1px #CCC;
+	padding:0 3px 0 3px;
 }
