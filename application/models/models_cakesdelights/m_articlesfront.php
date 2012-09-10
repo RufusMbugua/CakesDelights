@@ -4,10 +4,8 @@ if (!defined('BASEPATH'))
 /**
  *model to E_Articles entity
  */
-
 use application\models\Entities\entities_cakesDelights\E_Articles;
 use applications\models\Entities\entities_cakesDelights\E_Testimonials;
-
 class M_ArticlesFront  extends MY_Model {
 	var $articlesFront;
 	function getArticlesFrontInformation(){
@@ -17,8 +15,8 @@ class M_ArticlesFront  extends MY_Model {
 			                       
 			                       
 	      /*using DQL*/
-	      $query = $this->em->createQuery('SELECT a.title,a.dates,a.articleBody FROM models\Entities\entities_cakesdelights\e_articles a');
-          $query = $this->em->createQuery('SELECT t.title,t.dates,t.testimonialsBody FROM models\Entities\entities_cakesdelights\e_testimonials t');
+	      $query = $this->em->createQuery('SELECT a.title,a.dates,a.articleBody FROM models\Entities\cakesDelight\E_Articles a');
+          $query = $this->em->createQuery('SELECT t.title,t.dates,t.testimonialsBody FROM models\Entities\cakesDelight\E_Testimonials t');
           $this->articlesFront = $query->getResult();
 						foreach ($this->articlesFront as $key=>$value) {
 									// print $this->equipment[$key]['deviceCompNumber']."<br />";

@@ -163,8 +163,7 @@
 	
 	});
 	
-		
-		//load  scripts assynchronously
+		//load  scripts asynchronously
         (function() {
 
 		 var myscript = document.createElement('script');
@@ -176,6 +175,7 @@
 		 var s = document.getElementById('scripts');
 		
 		 s.parentNode.insertBefore(myscript, s);})();
+		
 		
 
 

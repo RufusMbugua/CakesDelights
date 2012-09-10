@@ -1,7 +1,5 @@
 <?php
-
 namespace models\Entities\entities_cakesDelights;
-
 
 /**
  * @Entity
@@ -28,16 +26,6 @@ private $dates;
 private $title;
 /**
 * @Column(name="userName", type="string",length=45, nullable=true)
-* */
-
-private $articleBody;
-/**
-* @Column(name="articleBody", type="string",length=155, nullable=true)
-* */
-
-private $tags;
-/**
-* @Column(name="tags", type="string",length=45, nullable=true)
 * */
 private $userName;
 
@@ -81,21 +69,17 @@ public function getUserName() {
 
 public function setUserName($userName) { $this -> userName = $userName;
 }
-
 public function getArticleBody() {
 		return $this -> ArticleBody;
 }
 
 public function setArticleBody($ArticleBody) { $this -> ArticleBody= $ArticleBody;
 }
-
 public function getTags() {
 		return $this -> tags;
 }
 
 public function setTags($tags) { $this -> tags = $tags;
 }
-
-
 }
 ?>
