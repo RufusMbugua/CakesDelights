@@ -56,14 +56,16 @@ $("#txtsearch").autocomplete("c_front/cakeSearch", {
 	</ul>
 	
 
+
+</nav>
+<section class="search">
 <form autocomplete="off" action="<?php echo base_url() ?>c_front/getCakesInfo" method="POST">
 
 <input type="search" id="txtsearch" name="txtsearch" placeholder="Search for Cakes" required size="70"/>
 
-<button id="btnsearch" name="btnsearch" class="button" style="color:#06F;background-color:#999; ">SEARCH</button>
-
+<button id="btnsearch" name="btnsearch" class="button awesome medium">Search</button>
 </form>
-</nav>
+</section>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <?php
